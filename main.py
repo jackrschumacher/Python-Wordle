@@ -3,11 +3,12 @@ from random import random, randrange #Import random
 import time
 
 
-words = ["REALLY", "LITTLE", "SHOULD", "PLEASE", "PEOPLE", "THINGS", "BETTER"] #List of Words
-randomWord = randrange(0, 5, 1)  #Range of Words 
+words = ["Really", "Little", "Should", "Please", "People", "Things", "Better"] #List of Words
+random = randrange(0, 5, 1)  #Range of Words 
+randomWord = words[random]
 difficulty = 0 # Difficulty level-yet to be integrated
-score = 0
 
+print(randomWord)
 
 print("---Python Wordle---") #Print Title
 print("=====================================")
@@ -22,37 +23,50 @@ guessNum = 0
 
 def guess(): 
     global guessNum
+    global score
+    
     
   
     
     
-    if guessNum <= 6:
+    if guessNum <= 5:
         guessNum = guessNum +1
-        #Add if-else for custom user inputs -> 1,2, etc.
         if guessNum ==6:
-            userInput = str(input("6:")) #Guess #1
-        elif guessNum ==5:
-            userInput = str(input("5:"))
+            userInput = str(input("6:")) #Guess #2
+        if guessNum ==5:
+            userInput = str(input("5:")) #Guess #2
         elif guessNum == 4:
-            userInput = str(input("4"))
+            userInput = str(input("4:")) #Guess #3
         elif guessNum == 3:
-            userInput = str(input("3: "))
+            userInput = str(input("3: ")) #Guess 
         elif guessNum == 2:
             userInput = str(input("2: "))
         elif guessNum == 1:
             userInput = str(input("1:"))
+    
+
     
         
 
         
         if userInput == randomWord:  #If userInput == randomWord -> You win!, Score +60
                 print("Congratulations, you have selected the Correct word!")
+                score = 0
                 score = score + 60 # Score decreases by every row
+                print("Score:", score)
 
 
         elif len(userInput)== 6 and userInput != randomWord:
-                print("Sorry, that is not the correct word. ")
-                guess()
+               
+                if guessNum == 6 :
+                    print("=====================================")
+                    print("Sorry, you did not guess the correct word in 6 tries. Better luck next time.")
+                    score = 0
+                    print("Score:",score)
+                else:
+                     print("Sorry, that is not the correct word. ")
+                     guess()
+
 
         elif len(userInput) > 6 or len(userInput) < 6:
                 print("Wrong word size. Try Again")
@@ -67,7 +81,6 @@ def guess():
 
         
         
-    else:
-        print("You have guessed over 6 times. Better Luck Next Time.")
-
+    
 guess()
+
