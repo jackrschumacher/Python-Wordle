@@ -20,7 +20,7 @@ count = 0
 
 
 def guess(): 
-
+    #Add if-else for custom user inputs -> 1,2, etc.
     userInput = str(input("1:")) #Guess #1
     if userInput == randomWord: #If userInput == randomWord -> You win!, Score +60
         print("Congratulations, you have selected the Correct word!")
@@ -43,4 +43,4 @@ while guessNum <= 6:
     guess()
     print(guessNum)
 else:
-    print("You have guessed over 6 times. Better Luck Next Time")
+    print("You have guessed over 6 times. Better Luck Next Time.")
