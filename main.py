@@ -20,7 +20,6 @@ userInput = str(input("1: "))
 if userInput == randomWord:
     print("Congratulations, you have selected the Correct word!")
 
-for i in userInput:
-    if userInput.# length
-        print(i)
-    
+elif len(userInput)== 6:
+    print("Hello!")
+
