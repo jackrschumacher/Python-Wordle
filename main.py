@@ -70,9 +70,11 @@ def guess():
                     print("Sorry, you did not guess the correct word in 6 tries. Better luck next time.")
                     score = 0
                     print("Score:",score)
+                    time.sleep(10)
                 else:
                      print("Sorry, that is not the correct word. ")
                      guess()
+                     compareStrings()
 
 
         elif len(userInput) > 6 or len(userInput) < 6:
@@ -81,22 +83,41 @@ def guess():
                 if len(userInput) == 6 and userInput == randomWord:
                     print("You Guessed the word!")
                     score = score +60
+                    compareStrings()
                 else:
                     print("You did not pick the correct word")
                     guess()
+                    compareStrings()
 
 def compareStrings():
+    global results
     results = "" #FIX
     for i in range(6):
         if userInput[i] == randomWord[i]:
-            results = results + userInput[i]
-            if i == 6:
+            results = results + userInput[i]    
+            if i == 5:
+                print("=====================================")  
                 print(results)
-        else:
-            results = results + "X"
-            if i == 6:
+                time.sleep(10)
+        '''
+        elif userInput[i] != randomWord[i]:
+            if i == 0:
+                results = results + "X"
+            elif i == 1:
+                results = results + "X"
+            elif i == 2:
+                results = results + "X"
+            elif i == 3:
+                results = results + "X"
+            elif i == 4:
+                results = results + "X"
+            elif i == 6:
+                results = results + "X"
+            print(results)
+            print(i)
+            if i == 5:
                 print(results)
-             
+        '''
 
         
         
