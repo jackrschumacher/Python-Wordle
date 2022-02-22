@@ -6,9 +6,11 @@ import time
 words = ["Really", "Little", "Should", "Please", "People", "Things", "Better"] #List of Words
 random = randrange(0, 5, 1)  #Range of Words 
 randomWord = words[random]
+print(randomWord)
 difficulty = 0 # Difficulty level-yet to be integrated
 
-print(randomWord)
+
+
 
 print("---Python Wordle---") #Print Title
 print("=====================================")
@@ -21,9 +23,14 @@ count = 0
 
 guessNum = 0
 
+
+
+
 def guess(): 
     global guessNum
     global score
+    global userInput
+
     
     
   
@@ -54,7 +61,7 @@ def guess():
                 score = 0
                 score = score + 60 # Score decreases by every row
                 print("Score:", score)
-
+                compareStrings()
 
         elif len(userInput)== 6 and userInput != randomWord:
                
@@ -77,7 +84,19 @@ def guess():
                 else:
                     print("You did not pick the correct word")
                     guess()
-                
+
+def compareStrings():
+    results = "" #FIX
+    for i in range(6):
+        if userInput[i] == randomWord[i]:
+            results = results + userInput[i]
+            if i == 6:
+                print(results)
+        else:
+            results = results + "X"
+            if i == 6:
+                print(results)
+             
 
         
         
