@@ -45,9 +45,9 @@ def guess():
         elif guessNum == 4:
             userInput = str(input("4:")) #Guess #3
         elif guessNum == 3:
-            userInput = str(input("3: ")) #Guess 
+            userInput = str(input("3:")) #Guess 
         elif guessNum == 2:
-            userInput = str(input("2: "))
+            userInput = str(input("2:"))
         elif guessNum == 1:
             userInput = str(input("1:"))
     
