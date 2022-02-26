@@ -3,10 +3,7 @@ from random import random, randrange #Import random
 import time
 
 
-words = ["Really", "Little", "Should", "Please", "People", "Things", "Better"] #List of Words
-random = randrange(0, 5, 1)  #Range of Words 
-randomWord = words[random]
-print(randomWord)
+random = randrange(1, 8, 1)  #Range of Words 
 difficulty = 0 # Difficulty level-yet to be integrated
 
 
@@ -14,6 +11,9 @@ difficulty = 0 # Difficulty level-yet to be integrated
 
 print("---Python Wordle---") #Print Title
 print("=====================================")
+print("Please input a difficulty level (1,2,3)")
+print("=====================================")
+difficulty = int(input("Difficulty: "))
 print("The word has six letters and you have 5 chances to correctly guess the word")
 
 print("=====================================") # First Guess
@@ -74,7 +74,9 @@ def guess():
                 else:
                      print("Sorry, that is not the correct word. ")
                      guess()
-                     compareStrings()
+                     score = score -10 
+                     print("Score:",score)
+                     #compareStrings()
 
 
         elif len(userInput) > 6 or len(userInput) < 6:
@@ -119,8 +121,17 @@ def compareStrings():
                 print(results)
         '''
 
+def difficultyLevels():
+    global randomWord
+    if difficulty == 1:
+        easyWords = ["Really", "Little", "Should", "Please", "People", "Things", "Better", "Number", "Aboard", "Actual" ] #List of Words
+        randomWord = easyWords[random]
+    if difficulty == 2:
+        mediumWords = ["Abacus","Abated", "Abhors", "Ablaze", "Acacia", "Accost", "Acidic", "Adhere" , "Adored", "Advent"]
+        randomWord = mediumWords[random]
+
         
-        
-    
+
+difficultyLevels()   
 guess()
 
