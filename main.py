@@ -3,7 +3,7 @@ from random import random, randrange #Import random
 import time
 
 
-random = randrange(1, 8, 1)  #Range of Words 
+random = randrange(1, 11, 1)  #Range of Words 
 difficulty = 0 # Difficulty level-yet to be integrated
 
 
@@ -126,9 +126,15 @@ def difficultyLevels():
     if difficulty == 1:
         easyWords = ["Really", "Little", "Should", "Please", "People", "Things", "Better", "Number", "Aboard", "Actual" ] #List of Words
         randomWord = easyWords[random]
-    if difficulty == 2:
+        
+    elif difficulty == 2:
         mediumWords = ["Abacus","Abated", "Abhors", "Ablaze", "Acacia", "Accost", "Acidic", "Adhere" , "Adored", "Advent"]
         randomWord = mediumWords[random]
+       
+    elif difficulty == 3:
+        hardWords = ["Abased", "Abayas", "Abbeys", "Abbess", "Abjure", "Abodes", "Abrade", "Accede", "Accrue", "Acinar"]
+        randomWord = hardWords[random]
+    
 
         
 
