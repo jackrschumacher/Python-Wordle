@@ -14,12 +14,16 @@ print("=====================================")
 print("Please input a difficulty level (1,2,3)")
 print("=====================================")
 difficulty = int(input("Difficulty: "))
-if difficulty == str:
+
+'''
+if difficulty == str: //Difficulty wrong data type fix - bugs
     print("Wrong Data Type")
     difficulty = int(input("Difficulty: "))
 else:
     print("Wrong Data Type")
     difficulty = int(input("Difficulty: "))
+
+'''
     
 print("The word has six letters and you have 5 chances to correctly guess the word")
 
