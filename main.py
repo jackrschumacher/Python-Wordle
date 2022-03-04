@@ -14,6 +14,13 @@ print("=====================================")
 print("Please input a difficulty level (1,2,3)")
 print("=====================================")
 difficulty = int(input("Difficulty: "))
+if difficulty == str:
+    print("Wrong Data Type")
+    difficulty = int(input("Difficulty: "))
+else:
+    print("Wrong Data Type")
+    difficulty = int(input("Difficulty: "))
+    
 print("The word has six letters and you have 5 chances to correctly guess the word")
 
 print("=====================================") # First Guess
@@ -70,6 +77,7 @@ def guess():
                     print("Sorry, you did not guess the correct word in 6 tries. Better luck next time.")
                     score = 0
                     print("Score:",score)
+                    print("Python Wordle will quit in 10 seconds.")
                     time.sleep(10)
                 else:
                      print("Sorry, that is not the correct word. ")
